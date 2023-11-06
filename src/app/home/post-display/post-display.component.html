@@ -1,0 +1,14 @@
+<div
+  *ngFor="let post of posts"
+  class="card bg-secondary mb-3"
+  style="max-width: 20rem"
+>
+  <div class="card-header">{{ post.department }}</div>
+  <div class="card-body">
+    <h4 class="card-title">{{ post.content }}</h4>
+
+    <button (click)="ondelete(post._id)" class="btn btn-outline-danger">
+      Delete
+    </button>
+  </div>
+</div>

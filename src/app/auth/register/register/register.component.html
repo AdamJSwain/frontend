@@ -1,0 +1,135 @@
+<div
+  class="container d-flex justify-content-center align-items-start"
+  style="margin-top: 100px"
+>
+  <form
+    (submit)="onRegister(registerForm)"
+    #registerForm="ngForm"
+    style="max-width: 500px; width: 100%"
+  >
+    <div class="form-group">
+      <label for="exampleUsername" class="form-label mt-4">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleUsername"
+        placeholder="Enter username"
+        ngModel
+        name="enteredUsername"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredUsername="ngModel"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredUsername.invalid &&
+          (enteredUsername.dirty || enteredUsername.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleEmail" class="form-label mt-4">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleEmail"
+        placeholder="Enter email"
+        ngModel
+        name="enteredEmail"
+        required
+        minlength="1"
+        #enteredEmail="ngModel"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredEmail.invalid && (enteredEmail.dirty || enteredEmail.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleName" class="form-label mt-4">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleName"
+        placeholder="Enter name"
+        ngModel
+        name="enteredName"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredName="ngModel"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredName.invalid && (enteredName.dirty || enteredName.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleSurname" class="form-label mt-4">Surname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleSurname"
+        placeholder="Enter surname"
+        ngModel
+        name="enteredSurname"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredSurname="ngModel"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredSurname.invalid &&
+          (enteredSurname.dirty || enteredSurname.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="examplePassword" class="form-label mt-4">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="examplePassword"
+        placeholder="Enter password"
+        ngModel
+        name="enteredPassword"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredPassword="ngModel"
+        autocomplete="off"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredPassword.invalid &&
+          (enteredPassword.dirty || enteredPassword.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Register</button>
+  </form>
+</div>

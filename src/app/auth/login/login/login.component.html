@@ -1,0 +1,63 @@
+<div
+  class="container d-flex justify-content-center align-items-start"
+  style="margin-top: 100px"
+>
+  <form
+    (submit)="onLogin(loginform)"
+    #loginform="ngForm"
+    style="max-width: 500px; width: 100%"
+  >
+    <div class="form-group">
+      <label for="exampleInputUsername" class="form-label mt-4">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputUsername"
+        placeholder="Enter username"
+        ngModel
+        name="enteredUsername"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredUsername="ngModel"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredUsername.invalid &&
+          (enteredUsername.dirty || enteredUsername.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword" class="form-label mt-4">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword"
+        placeholder="Password"
+        ngModel
+        name="enteredPassword"
+        required
+        minlength="1"
+        pattern="^[a-zA-Z0-9\s_-]+$"
+        #enteredPassword="ngModel"
+        autocomplete="off"
+        style="width: 100%"
+      />
+      <div
+        *ngIf="
+          enteredPassword.invalid &&
+          (enteredPassword.dirty || enteredPassword.touched)
+        "
+        class="text-danger"
+      >
+        Invalid
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Login</button>
+  </form>
+</div>
